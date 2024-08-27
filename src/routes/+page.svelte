@@ -8,20 +8,7 @@
 		code: ''
 	};
 
-	snippetStore.set([
-		{
-			title: 'Kevin COde Snippet',
-			language: 'HTML',
-			code: `<div> This is a div </div>`,
-			favorite: false
-		},
-		{
-			title: 'Kevin COde Snippet',
-			language: 'HTML',
-			code: `<div> This is a div </div>`,
-			favorite: false
-		}
-	]);
+	snippetStore.set([]);
 
 	//createSnippet(input: CodeSnippetInput)
 	//SnippetStore -> local writable that allows us to store code snippets
