@@ -1,11 +1,21 @@
 <script lang="ts">
 	import CodeSnippetCard from '$lib/CodeSnippetCard.svelte';
+	import { snippetStore } from '../SnippetStore';
 
 	let formData: CodeSnippetInput = {
 		title: '',
 		language: 'html',
 		code: ''
 	};
+
+	snippetStore.set([
+		{
+			title: 'Kevin COde Snippet',
+			language: 'HTML',
+			code: `<div> This is a div </div>`,
+			favorite: false
+		}
+	]);
 
 	//createSnippet(input: CodeSnippetInput)
 	//SnippetStore -> local writable that allows us to store code snippets
@@ -47,6 +57,8 @@
 		<div class="text-center py-6">
 			<h2>My Code Snippets</h2>
 		</div>
-		<CodeSnippetCard />
+		{#each $snippetStore as snippet, index}
+			<CodeSnippetCard />
+		{/each}
 	</div>
 </div>
