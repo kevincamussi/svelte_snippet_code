@@ -8,8 +8,15 @@ declare namespace App {
 	// interface Platform {}
 }
 
-declare interface CodeSnippetInput {
+interface CodeSnippetInput {
 	title: string;
 	language: string;
 	code: string;
+}
+
+interface CodeSnippet {
+	title: string;
+	language: string;
+	code: string;
+	favorite: boolean;
 }
