@@ -1,6 +1,9 @@
 <script lang="ts">
 	import CodeSnippetCard from '$lib/CodeSnippetCard.svelte';
-	import { snippetStore } from '../SnippetStore';
+	import { snippetStore, addSnippet } from '../SnippetStore';
+	import type { PageData } from './$types';
+	export let data: PageData;
+	data.snippets;
 
 	let formData: CodeSnippetInput = {
 		title: '',
@@ -8,7 +11,7 @@
 		code: ''
 	};
 
-	snippetStore.set([]);
+	snippetStore.set(data.snippets);
 
 	//createSnippet(input: CodeSnippetInput)
 	//SnippetStore -> local writable that allows us to store code snippets
@@ -46,6 +49,13 @@
 					placeholder="Enter you snippet code here..."
 				/>
 			</label>
+			<button
+				type="button"
+				class="btn btn-sm variant-filled-primary"
+				on:click={() => addSnippet(formData)}
+			>
+				Create Snippet
+			</button>
 		</div>
 		<div class="text-center py-6">
 			<h2>My Code Snippets</h2>
