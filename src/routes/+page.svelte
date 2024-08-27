@@ -14,6 +14,12 @@
 			language: 'HTML',
 			code: `<div> This is a div </div>`,
 			favorite: false
+		},
+		{
+			title: 'Kevin COde Snippet',
+			language: 'HTML',
+			code: `<div> This is a div </div>`,
+			favorite: false
 		}
 	]);
 
@@ -58,7 +64,7 @@
 			<h2>My Code Snippets</h2>
 		</div>
 		{#each $snippetStore as snippet, index}
-			<CodeSnippetCard />
+			<CodeSnippetCard {snippet} {index} />
 		{/each}
 	</div>
 </div>
