@@ -8,3 +8,12 @@ export const addSnippet = (input: CodeSnippetInput) => {
 		return [{ ...input, favorite: false }, ...snippets];
 	});
 };
+
+export const deleteSnippet = (index: number) => {
+	const snippets = get(snippetStore);
+	snippets.splice(index, 1); // removes 1 item from index
+	snippetStore.update(() => {
+		// codeSnippet
+		return snippets;
+	});
+};
