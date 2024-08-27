@@ -9,7 +9,7 @@ const config = {
 			fallback: 'index.html' // Usado para SPA (Single Page Application)
 		}),
 		paths: {
-			base: process.env.BASE_PATH || ''
+			base: process.env.BASE_PATH || '/svelte_snippet_code'
 		}
 	}
 };
